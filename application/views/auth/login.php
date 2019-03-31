@@ -23,41 +23,37 @@
 
 <body>
     <!-- Outer Row -->
-    <div class="row justify-content-center">
-        <img src="<?= base_url('asset/'); ?>img/icons/user-graduate-solid.svg" class="logo">
-    </div>
-    <div class="row justify-content-center">
-        <h2 class="logo-text">HelloClass</h2>
-    </div>
-    <div class="row justify-content-center">
-        <button type="button" class="btn btn-primary btn-login" data-toggle="modal" data-target="#exampleModal">
-            Click to Login
-        </button>
-    </div>
-
-
-
-    <!-- Modal -->
-    <div class="modal fade modallogin" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <form method="post">
-                        <div class="form-group">
-                            <label for="email">Email address</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Enter email" name="email">
-                            <small id="email" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password" name="password">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Log in</button>
-                    </form>
-                </div>
-            </div>
+    <div class="container login-page">
+        <div class="row justify-content-center">
+            <img src="<?= base_url('asset/'); ?>img/icons/user-graduate-solid.svg" class="logo">
+        </div>
+        <div class="row justify-content-center">
+            <h2 class="logo-text">HelloClass</h2>
+        </div>
+        <div class="row justify-content-center">
+            <?= form_error('email', '<small class="text-danger pt-3">', '</small>') ?>
+        </div>
+        <div class="row justify-content-center">
+            <?= form_error('password', '<small class="text-danger pt-3">', '</small>') ?>
         </div>
     </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <form method="post" action="<?= base_url('Welcome') ?>">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Enter email" name="email">
+                    <small id="email" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                </div>
+                <button type="submit" class="btn btn-primary">Log in</button>
+            </form>
+        </div>
+    </div>
+
 
 
 
